@@ -10,7 +10,7 @@ function Teddy(){
 
     const navigate = useNavigate();
 
-    const [message, setMessage]=useState(localStorage.getItem("teddy"));
+    const [message, setMessage]=useState(sessionStorage.getItem("teddy"));
     useEffect(()=>{
         navigate('/teddy');
     },[message,navigate]);
@@ -35,11 +35,11 @@ function Teddy(){
         .then((res)=>{
             if(res.data){
                 setMessage(true);
-                localStorage.setItem("teddy",true);
+                sessionStorage.setItem("teddy",true);
             }
             else{
                 setMessage(false);
-                localStorage.removeItem("teddy");
+                sessionStorage.removeItem("teddy");
             }
         })
         .catch((error)=>console.log(error));

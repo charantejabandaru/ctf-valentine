@@ -9,8 +9,7 @@ import { useNavigate } from 'react-router-dom';
 function Hug(){
 
     const navigate = useNavigate();
-   // console.log(localStorage.getItem("hug"));
-    const [message, setMessage]=useState(localStorage.getItem("hug"));
+    const [message, setMessage]=useState(sessionStorage.getItem("hug"));
     useEffect(()=>{
         navigate('/hug');
 
@@ -36,11 +35,11 @@ function Hug(){
         .then((res)=>{
             if(res.data){
                 setMessage(true);
-                localStorage.setItem("hug",true);
+                sessionStorage.setItem("hug",true);
             }
             else{
                 setMessage(false);
-                localStorage.removeItem("hug");
+                sessionStorage.removeItem("hug");
             }
         })
         .catch((error)=>console.log(error));

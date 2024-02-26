@@ -10,9 +10,8 @@ import { useNavigate } from 'react-router-dom';
 function Kiss(){
 
     const navigate = useNavigate();
-    console.log(localStorage.getItem("kiss"));
-    const [message, setMessage]=useState(localStorage.getItem("kiss"));
-    const [msg, setMsg]=useState(localStorage.getItem("input"));
+    const [message, setMessage]=useState(sessionStorage.getItem("kiss"));
+    const [msg, setMsg]=useState(sessionStorage.getItem("input"));
 
     useEffect(()=>{
         navigate('/kiss');
@@ -39,11 +38,11 @@ function Kiss(){
         .then((res)=>{
             if(res.data){
                 setMessage(true);
-                localStorage.setItem("kiss",true);
+                sessionStorage.setItem("kiss",true);
             }
             else{
                 setMessage(false);
-                localStorage.removeItem("kiss");
+                sessionStorage.removeItem("kiss");
             }
         })
         .catch((error)=>console.log(error));
@@ -53,11 +52,11 @@ function Kiss(){
         .then((res)=>{
             if(res.data){
                 setMsg(true);
-                localStorage.setItem("input",true);
+                sessionStorage.setItem("input",true);
             }
             else{
                 setMsg(false);
-                localStorage.removeItem("input");
+                sessionStorage.removeItem("input");
             }
         })
         .catch((error)=>console.log(error));

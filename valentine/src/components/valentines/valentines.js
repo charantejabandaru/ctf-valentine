@@ -5,7 +5,7 @@ import flag from '../../resources/flag.jpg';
 
 function Valentines() {
 
-    const [message, setMessage]=useState(localStorage.getItem("flag"));
+    const [message, setMessage]=useState(sessionStorage.getItem("flag"));
     const [display,setDisplay]=useState(false);
     useEffect(()=>{},[message,display]);
 
@@ -26,12 +26,12 @@ function Valentines() {
     function action(){
         if(document.getElementById("flag").value==process.env.REACT_APP_FLAG){
             setMessage(true);
-            localStorage.setItem("flag",true);
+            sessionStorage.setItem("flag",true);
         }
         else{
             setMessage(false);
             setDisplay(true);
-            localStorage.removeItem("flag");
+            sessionStorage.removeItem("flag");
         }
     }
 

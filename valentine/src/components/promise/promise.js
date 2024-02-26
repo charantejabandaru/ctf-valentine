@@ -10,7 +10,7 @@ function Promise(){
 
     const navigate = useNavigate();
 
-    const [message, setMessage]=useState(localStorage.getItem("promise"));
+    const [message, setMessage]=useState(sessionStorage.getItem("promise"));
     useEffect(()=>{
         navigate('/promise');
 
@@ -36,11 +36,11 @@ function Promise(){
         .then((res)=>{
             if(res.data){
                 setMessage(true);
-                localStorage.setItem("promise",true);
+                sessionStorage.setItem("promise",true);
             }
             else{
                 setMessage(false);
-                localStorage.removeItem("promise");
+                sessionStorage.removeItem("promise");
             }
         })
         .catch((error)=>console.log(error));

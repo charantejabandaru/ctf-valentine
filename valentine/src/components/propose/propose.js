@@ -10,7 +10,7 @@ function Propose(){
 
     const navigate = useNavigate();
 
-    const [message, setMessage]=useState(localStorage.getItem("propose"));
+    const [message, setMessage]=useState(sessionStorage.getItem("propose"));
     useEffect(()=>{
         navigate('/propose');
     },[message,navigate]);
@@ -36,11 +36,11 @@ function Propose(){
         .then((res)=>{
             if(res.data){
                 setMessage(true);
-                localStorage.setItem("propose",true);
+                sessionStorage.setItem("propose",true);
             }
             else{
                 setMessage(false);
-                localStorage.removeItem("propose");
+                sessionStorage.removeItem("propose");
             }
         })
         .catch((error)=>console.log(error));

@@ -10,7 +10,7 @@ function Chocolate(){
 
     const navigate = useNavigate();
 
-    const [message, setMessage]=useState(localStorage.getItem("chocolate"));
+    const [message, setMessage]=useState(sessionStorage.getItem("chocolate"));
     useEffect(()=>{
         navigate('/chocolate');
 
@@ -36,11 +36,11 @@ function Chocolate(){
         .then((res)=>{
             if(res.data){
                 setMessage(true);
-                localStorage.setItem("chocolate",true);
+                sessionStorage.setItem("chocolate",true);
             }
             else{
                 setMessage(false);
-                localStorage.removeItem("chocolate");
+                sessionStorage.removeItem("chocolate");
             }
         })
         .catch((error)=>console.log(error));
