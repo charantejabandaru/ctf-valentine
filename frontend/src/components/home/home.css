@@ -1,0 +1,37 @@
+body {
+    padding: 10px;
+    height:96vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 5s;
+
+    animation-name: animate;
+    animation-duration: 30s;
+    animation-direction: alternate-reverse;;
+    animation-iteration-count:infinite ;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-timing-function: ease-in;
+
+  }
+  @keyframes animate {
+    0%{
+      background-image: url("https://t4.ftcdn.net/jpg/06/98/39/33/360_F_698393308_V9CFz9cEVFUlwW16KhAQahjgf2KTG97e.jpg");
+    }
+    20%{
+      background-image: url("https://uhdwallpapers.org/uploads/cache/1804671913/valentines-day-love-heart-romantic_600x338-mm-90.jpg");
+    }
+    40%{
+      background-image: url("https://t3.ftcdn.net/jpg/06/75/29/40/360_F_675294000_ak7qypUdrOpCL83mDT6oXn654XfpVWCZ.jpg");
+    }
+    60%{
+      background-image: url("https://d1fegwn2wjh0cs.cloudfront.net/06-20-2020/t_3b30818e997741168a8d0f5afd22ec34_name_C7B865F38CE34347B2257EF9AE6612B1");
+    }
+    80%{
+      background-image: url("https://static.vecteezy.com/system/resources/previews/030/274/232/large_2x/valentine-s-day-wallpaper-hd-wallpaper-ai-generated-free-photo.jpg");
+    }
+    100%{
+      background-image: url("https://www.authorlove.com/wp-content/uploads/2016/09/36-1.jpg");
+    }
+  }
