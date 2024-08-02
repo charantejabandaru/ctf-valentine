@@ -13,7 +13,7 @@ app.use(bodyparser.urlencoded({extended : true}));
 app.use(bodyparser.json());
 app.use(require("./controller/user"));
 
-db(app);
+db();
 
 app.listen(4200,()=>{
     console.log("running on port 4200");
