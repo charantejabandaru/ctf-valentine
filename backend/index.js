@@ -5,7 +5,7 @@ const bodyparser = require("body-parser");
 const db = require("./config/db");
 
 const app=express();
-dotenv.config({ path: "./config/config.env"});
+dotenv.config({ path: "./config/.env"});
 app.use(cors({
     origin: '*'
 }));
